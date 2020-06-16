@@ -16,25 +16,28 @@ class Link {
 
     append = (node) => {
         if (this.last) {
+            // 链表不为空时
             this.last.next = node;
             this.last = node;
         } else {
+            // 链表为空时
             this.head = node;
             this.last = node;
         }
     }
 
+    // 遍历输出链表
     valueOf = () => {
         let str = '';
         let curr = this.head;
         while(curr) {
             str += curr.value + ' -> ';
-
             curr = curr.next;
         }
         return str;
     }
 
+    // 链表逆序
     reverse = () => {
         let curr = this.head;
         while(curr) {
@@ -61,10 +64,6 @@ class Link {
             throw new Error('链表长度不是奇数，或长度小于三')
         }
         
-    }
-
-    checkCircle = () => {
-       
     }
 }
 
